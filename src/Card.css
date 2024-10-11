@@ -1,0 +1,130 @@
+/* General body styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #101111, #ff6ec4);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+}
+
+/* Card container for responsive layout */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Card component styling */
+.card {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card gradient border */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: linear-gradient(135deg, #e41717, #0d0d0d);
+  border-radius: 15px;
+  transition: opacity 0.3s ease;
+  opacity: 0.7;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover::before {
+  opacity: 1;
+  background: linear-gradient(135deg, #ff9a8b, #fad0c4);
+}
+
+/* Card image styling with border */
+.card-image {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.card-image::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: linear-gradient(135deg, #ff6ec4, #42a5f5);
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+  opacity: 0.7;
+}
+
+.card:hover .card-image::before {
+  opacity: 1;
+  background: linear-gradient(135deg, #ff9a8b, #fad0c4);
+}
+
+.card-image img {
+  width: 100%;
+  border-radius: 10px;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Image hover effect */
+.card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+/* Card content styles */
+.card-content {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.card-content h3 {
+  margin: 15px 0 10px;
+  font-size: 1.6rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 1rem;
+  color: #100f0f;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+/* Colorful hover effect on text */
+.card:hover .card-content h3 {
+  color: #0a0609;
+}
+
+.card:hover .card-content p {
+  color: #201816;
+}
